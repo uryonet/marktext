@@ -26,7 +26,6 @@ const cli = () => {
         --dump-keyboard-layout    Dump keyboard information
     -n, --new-window              Open a new window on second-instance
         --user-data-dir           Change the user data directory
-        --disable-gpu             Disable GPU hardware acceleration
     -v, --verbose                 Be verbose
         --version                 Print version information
     -h, --help                    Print this help message

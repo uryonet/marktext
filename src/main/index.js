@@ -33,10 +33,6 @@ const args = cli()
 const appEnvironment = setupEnvironment(args)
 initializeLogger(appEnvironment)
 
-if (args['--disable-gpu']) {
-  app.disableHardwareAcceleration()
-}
-
 // Make Mark Text a single instance application.
 if (!process.mas && process.env.NODE_ENV !== 'development') {
   const gotSingleInstanceLock = app.requestSingleInstanceLock()
