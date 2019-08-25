@@ -3,7 +3,7 @@ html {
 }
 
 pre {
-  -webkit-font-smoothing: auto;
+  -webkit-font-smoothing: antialiased;
 }
 
 @keyframes highlight {
@@ -220,7 +220,7 @@ span.ag-math > .ag-math-render.ag-math-error {
   background: transparent;
 }
 
-.ag-gray.ag-ruby > .ag-ruby-render::before
+.ag-gray.ag-ruby > .ag-ruby-render::before,
 .ag-gray.ag-math > .ag-math-render::before {
   border-width: 5px;
   border-style: solid;
@@ -232,14 +232,13 @@ span.ag-math > .ag-math-render.ag-math-error {
   content: "";
 }
 
-.ag-hide.ag-ruby > .ag-ruby-render::before
+.ag-hide.ag-ruby > .ag-ruby-render::before,
 .ag-hide.ag-math > .ag-math-render::before {
   content: none;
 }
 
 figure {
   padding: 0;
-  margin: 0;
   margin: 1rem 0;
   position: relative;
 }
@@ -282,7 +281,7 @@ figure {
 
 .ag-container-icon {
   position: absolute;
-  top: 0px;
+  top: 0;
   right: 10px;
   width: 20px;
   height: 20px;
@@ -402,7 +401,6 @@ li.ag-task-list-item > input[type=checkbox]::before {
   position: absolute;
   top: -2px;
   left: -2px;
-  box-sizing: border-box;
   transition: all .2s ease;
 }
 

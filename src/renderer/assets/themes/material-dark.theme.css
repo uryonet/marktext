@@ -82,7 +82,7 @@
 }
 .title-bar .frameless-titlebar-minimize:hover,
 .title-bar .frameless-titlebar-toggle:hover {
-  background-color: rgb(255, 255, 255, .05);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .recent-files-projects a,

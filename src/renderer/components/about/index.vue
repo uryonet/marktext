@@ -60,11 +60,6 @@ export default {
 </script>
 
 <style>
-  .about-dialog el-row,
-  .about-dialog el-col {
-    display: block;
-  }
-
   .about-dialog img.logo {
     width: 80px;
     height: 80px;

@@ -57,9 +57,10 @@ export default {
 </script>
 
 <style scoped>
-.pref-container {
+:root {
   --prefSideBarWidth: 320px;
-
+}
+.pref-container {
   width: 100vw;
   height: 100vh;
   max-width: 100vw;
@@ -84,8 +85,7 @@ export default {
       -webkit-app-region: drag;
     }
     & .pref-setting {
-      padding: 50px 20px;
-      padding-top: var(--titleBarHeight);
+      padding: var(--titleBarHeight) 20px 50px 20px;
       flex: 1;
       height: calc(100vh - var(--titleBarHeight));
       overflow: auto;

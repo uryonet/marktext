@@ -58,7 +58,7 @@ export default {
     & .title {
       padding: 5px 0;
       color: var(--sideBarTitleColor);
-      font-weight: 600px;
+      font-weight: 600;
       font-size: 16px;
       margin: 20px 0;
       text-align: center;

@@ -155,8 +155,7 @@ export default {
         list-style-type: none;
         & li {
           display: block;
-          padding: 2px 16px;
-          padding-right: 0;
+          padding: 2px 0 16px 0;
           text-overflow: ellipsis;
           overflow: hidden;
           cursor: pointer;

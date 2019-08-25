@@ -369,8 +369,8 @@ const backspaceCtrl = ContentState => {
         case 'STOP': // Cursor at begin of article and nothing need to do
           break
         case 'LI': {
+          const children = parent.children
           if (inlineDegrade.info === 'REPLACEMENT') {
-            const children = parent.children
             const grandpa = this.getBlock(parent.parent)
             if (children[0].type === 'input') {
               this.removeBlock(children[0])
@@ -380,7 +380,6 @@ const backspaceCtrl = ContentState => {
             })
             this.removeBlock(grandpa)
           } else if (inlineDegrade.info === 'REMOVE_INSERT_BEFORE') {
-            const children = parent.children
             const grandpa = this.getBlock(parent.parent)
             if (children[0].type === 'input') {
               this.removeBlock(children[0])

@@ -52,7 +52,7 @@
   display: inline-block;
   width: 100%;
   height: 100%;
-  filter: drop-shadow(20px 0 currentColor); 
+  filter: drop-shadow(20px 0 currentColor);
   position: relative;
   left: -20px;
 }
@@ -115,7 +115,7 @@
   border-bottom-color: transparent;
   position: absolute;
   top: 5px;
-  right: 0px;
+  right: 0;
 }
 
 .ag-front-menu ul li.item.disabled {
@@ -152,5 +152,5 @@
 }
 
 .ag-front-menu .submenu::-webkit-scrollbar:vertical {
-  width: 0px;
+  width: 0;
 }

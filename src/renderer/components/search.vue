@@ -292,7 +292,6 @@ export default {
     box-sizing: border-box;
     font-size: 14px;
     color: var(--editorColor);
-    padding: 0 8px;
     background: transparent;
   }
 </style>

@@ -74,9 +74,8 @@ export default {
   .pref-theme {
     & h4 {
       text-transform: uppercase;
-      margin: 0;
+      margin: 0 0 30px 0;
       font-weight: 100;
-      margin-bottom: 30px;
     }
   }
   .offcial-themes {
@@ -84,7 +83,7 @@ export default {
       cursor: pointer;
       width: 250px;
       height: 100px;
-      margin: 0px 22px 10px 22px;
+      margin: 0 22px 10px 22px;
       padding-left: 30px;
       padding-top: 20px;
       overflow: hidden;

@@ -178,10 +178,6 @@ export default {
     font-size: 14px;
     margin: 20px 0;
     color: var(--editorColor);
-    & .uploader {
-      color: var(--editorColor80);
-      font-size: 600;
-    }
   }
   & .link {
     color: var(--themeColor);

@@ -72,7 +72,6 @@ export default {
 
 <style scoped>
   .search-wrapper {
-    margin-top: 8px;
     z-index: 10000;
     position: relative;
     left: 50%;
@@ -85,7 +84,7 @@ export default {
     box-shadow: none;
     border: none;
     border-radius: 3px;
-    margin: 0;
+    margin: 8px 0 0 0;
     padding: 0 8px;
 
     & .input-wrapper {
