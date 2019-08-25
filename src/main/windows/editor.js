@@ -54,7 +54,6 @@ class EditorWindow extends BaseWindow {
     const {
       titleBarStyle,
       theme,
-      sideBarVisibility,
       tabBarVisibility,
       sourceCodeModeEnabled
     } = preferences.getAll()
@@ -87,7 +86,6 @@ class EditorWindow extends BaseWindow {
         addBlankTab,
         markdownList: this._markdownToOpen,
         lineEnding,
-        sideBarVisibility,
         tabBarVisibility,
         sourceCodeModeEnabled
       })
@@ -360,13 +358,12 @@ class EditorWindow extends BaseWindow {
     browserWindow.webContents.once('did-finish-load', () => {
       this.lifecycle = WindowLifecycle.READY
       const { preferences } = this._accessor
-      const { sideBarVisibility, tabBarVisibility, sourceCodeModeEnabled } = preferences.getAll()
+      const { tabBarVisibility, sourceCodeModeEnabled } = preferences.getAll()
       const lineEnding = preferences.getPreferedEOL()
       browserWindow.webContents.send('mt::bootstrap-editor', {
         addBlankTab: true,
         markdownList: [],
         lineEnding,
-        sideBarVisibility,
         tabBarVisibility,
         sourceCodeModeEnabled
       })

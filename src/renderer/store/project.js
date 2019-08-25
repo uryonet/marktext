@@ -78,7 +78,6 @@ const actions = {
       commit('SET_ROOT_DIRECTORY', pathname)
       commit('SET_LAYOUT', {
         rightColumn: 'files',
-        showSideBar: true,
         showTabBar: true
       })
       dispatch('SET_LAYOUT_MENU_ITEM')

@@ -6,7 +6,6 @@ const sideBarWidth = typeof +width === 'number' ? Math.max(+width, 220) : 280
 // messages from main process, and do not change the state
 const state = {
   rightColumn: 'files',
-  showSideBar: false,
   showTabBar: false,
   sideBarWidth
 }
@@ -36,8 +35,8 @@ const actions = {
     })
   },
   SET_LAYOUT_MENU_ITEM ({ commit, state }) {
-    const { showTabBar, showSideBar } = state
-    ipcRenderer.send('AGANI::set-view-layout', { showTabBar, showSideBar })
+    const { showTabBar } = state
+    ipcRenderer.send('AGANI::set-view-layout', { showTabBar })
   },
   CHANGE_SIDE_BAR_WIDTH ({ commit }, width) {
     commit('SET_SIDE_BAR_WIDTH', width)

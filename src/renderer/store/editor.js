@@ -487,7 +487,6 @@ const actions = {
         addBlankTab,
         markdownList,
         lineEnding,
-        sideBarVisibility,
         tabBarVisibility,
         sourceCodeModeEnabled
       } = config
@@ -496,7 +495,6 @@ const actions = {
       dispatch('SEND_INITIALIZED')
       commit('SET_LAYOUT', {
         rightColumn: 'files',
-        showSideBar: !!sideBarVisibility,
         showTabBar: !!tabBarVisibility
       })
       dispatch('SET_LAYOUT_MENU_ITEM')

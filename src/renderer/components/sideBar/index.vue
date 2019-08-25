@@ -1,6 +1,5 @@
 <template>
   <div
-    v-show="showSideBar"
     class="side-bar"
     ref="sideBar"
     :style="[ !rightColumn ? { 'min-width': '45px' } : {}, { 'width': `${finalSideBarWidth}px` } ]"
@@ -72,16 +71,14 @@ export default {
   computed: {
     ...mapState({
       rightColumn: state => state.layout.rightColumn,
-      showSideBar: state => state.layout.showSideBar,
       projectTree: state => state.project.projectTree,
       sideBarWidth: state => state.layout.sideBarWidth,
       tabs: state => state.editor.tabs
     }),
     finalSideBarWidth () {
-      const { showSideBar, rightColumn, sideBarViewWidth } = this
+      const { rightColumn, sideBarViewWidth } = this
       let width = sideBarViewWidth
       if (rightColumn === '') width = 45
-      if (!showSideBar) width -= 45
       return width
     }
   },

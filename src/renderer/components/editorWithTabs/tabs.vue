@@ -1,7 +1,7 @@
 <template>
   <div
     class="editor-tabs"
-    :style="{'max-width': showSideBar ? `calc(100vw - ${sideBarWidth}px` : '100vw' }"
+    :style="{'max-width': `calc(100vw - ${sideBarWidth}px` }"
   >
     <div
       class="scrollable-tabs"
@@ -59,7 +59,6 @@ export default {
     ...mapState({
       currentFile: state => state.editor.currentFile,
       tabs: state => state.editor.tabs,
-      showSideBar: state => state.layout.showSideBar,
       sideBarWidth: state => state.layout.sideBarWidth
     })
   },

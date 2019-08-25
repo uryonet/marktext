@@ -47,7 +47,6 @@
 
 | Key                           | Type    | Default | Description                                        |
 | ----------------------------- | ------- | ------- | -------------------------------------------------- |
-| sideBarVisibility<sup>*</sup> | Boolean | false   | Controls the visibility of the side bar.           |
 | tabBarVisibility<sup>*</sup>  | Boolean | false   | Controls the visibility of the tabs.               |
 | sourceCodeModeEnabled*        | Boolean | false   | Controls the visibility of the source-code editor. |
 

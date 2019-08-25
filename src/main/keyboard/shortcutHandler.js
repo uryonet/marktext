@@ -98,7 +98,6 @@ class Keybindings {
       ['viewSourceCodeMode', 'CmdOrCtrl+Alt+S'],
       ['viewTypewriterMode', 'CmdOrCtrl+Alt+T'],
       ['viewFocusMode', 'CmdOrCtrl+Shift+F'],
-      ['viewToggleSideBar', 'CmdOrCtrl+J'],
       ['viewToggleTabBar', 'CmdOrCtrl+Alt+B'],
       ['viewDevToggleDeveloperTools', 'CmdOrCtrl+Alt+I'],
       ['viewDevReload', 'CmdOrCtrl+R'],

@@ -187,10 +187,6 @@
       "path"
     ]
   },
-  "sideBarVisibility": {
-    "description": "View--Whether the side bar is visible.",
-    "type": "boolean"
-  },
   "tabBarVisibility": {
     "description": "View--Whether the tabs are shown.",
     "type": "boolean"
