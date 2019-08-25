@@ -9,7 +9,6 @@ import { isOsx } from '../config'
 import { getKeyboardLanguage, getVirtualLetters } from '../keyboard'
 
 // Problematic key bindings:
-//   Aidou: Ctrl+/ -> dead key
 //   Inline Code: Ctrl+` -> dead key
 //   Upgrade Heading: Ctrl+= -> points to Ctrl+Plus which is ok; Ctrl+Plus is broken
 
@@ -54,7 +53,6 @@ class Keybindings {
       ['editFindNext', 'CmdOrCtrl+Alt+U'],
       ['editFindPrevious', 'CmdOrCtrl+Shift+U'],
       ['editReplace', 'CmdOrCtrl+Alt+F'],
-      ['editAidou', 'CmdOrCtrl+/'],
       ['editScreenshot', 'CmdOrCtrl+Alt+A'],
 
       // Paragraph menu
@@ -160,7 +158,7 @@ class Keybindings {
     // fix broken shortcuts and dead keys
     const lang = getKeyboardLanguage()
     switch (lang) {
-      // fix aidou and inline code
+      // fix inline code
       case 'ch':
       case 'de':
       case 'dk':
@@ -168,22 +166,6 @@ class Keybindings {
       case 'no':
       case 'se':
         this._fixInlineCode()
-
-        if (!isOsx) {
-          this._fixAidou()
-        }
-        break
-
-      // fix aidou only
-      case 'es':
-      case 'fr':
-      case 'hr':
-      case 'it':
-      case 'pl':
-      case 'pt':
-        if (!isOsx) {
-          this._fixAidou()
-        }
         break
 
       // custom layouts
@@ -194,10 +176,6 @@ class Keybindings {
         }
         break
     }
-  }
-
-  _fixAidou () {
-    this.mnemonics.set('CmdOrCtrl+/', 'CmdOrCtrl+7')
   }
 
   // fix dead backquote key on layouts like German

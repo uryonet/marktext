@@ -38,11 +38,6 @@
       :bool="hideScrollbar"
       :onChange="value => onSelectChange('hideScrollbar', value)"
     ></bool>
-    <bool
-      description="Enable Aidou."
-      :bool="aidou"
-      :onChange="value => onSelectChange('aidou', value)"
-    ></bool>
     <separator></separator>
     <cur-select
       description="Sort files in opened folder by created time modified time and title."
@@ -107,7 +102,6 @@ export default {
       openFilesInNewWindow: state => state.preferences.openFilesInNewWindow,
       openFolderInNewWindow: state => state.preferences.openFolderInNewWindow,
       hideScrollbar: state => state.preferences.hideScrollbar,
-      aidou: state => state.preferences.aidou,
       fileSortBy: state => state.preferences.fileSortBy,
       language: state => state.preferences.language
     }),

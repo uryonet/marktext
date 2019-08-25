@@ -8,7 +8,6 @@ const state = {
   openFilesInNewWindow: false,
   openFolderInNewWindow: false,
   hideScrollbar: false,
-  aidou: true,
   fileSortBy: 'created',
   startUpAction: 'lastState',
   defaultDirectoryToOpen: '',

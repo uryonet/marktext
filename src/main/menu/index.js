@@ -268,19 +268,6 @@ class AppMenu {
     })
   }
 
-  updateAidouMenu = bool => {
-    this.windowMenus.forEach((value, key) => {
-      const { menu, type } = value
-      if (type !== MenuType.EDITOR) return
-
-      const aidouMenu = menu.getMenuItemById('aidou')
-      if (!aidouMenu) {
-        return
-      }
-      aidouMenu.visible = bool
-    })
-  }
-
   _appendMiscShortcuts = shortcutMap => {
     shortcutMap.push({
       accelerator: this._keybindings.getAccelerator('tabsCycleForward'),
@@ -340,9 +327,6 @@ class AppMenu {
       }
       if (prefs.autoSave !== undefined) {
         this.updateAutoSaveMenu(prefs.autoSave)
-      }
-      if (prefs.aidou !== undefined) {
-        this.updateAidouMenu(prefs.aidou)
       }
     })
   }

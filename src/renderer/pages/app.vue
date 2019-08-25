@@ -27,7 +27,6 @@
         :text-direction="textDirection"
         :platform="platform"
       ></editor-with-tabs>
-      <aidou></aidou>
       <about-dialog></about-dialog>
       <rename></rename>
       <tweet></tweet>
@@ -42,7 +41,6 @@ import Recent from '@/components/recent'
 import EditorWithTabs from '@/components/editorWithTabs'
 import TitleBar from '@/components/titleBar'
 import SideBar from '@/components/sideBar'
-import Aidou from '@/components/aidou/aidou'
 import AboutDialog from '@/components/about'
 import Rename from '@/components/rename'
 import Tweet from '@/components/tweet'
@@ -54,7 +52,6 @@ import { DEFAULT_STYLE } from '@/config'
 export default {
   name: 'marktext',
   components: {
-    Aidou,
     Recent,
     EditorWithTabs,
     TitleBar,
