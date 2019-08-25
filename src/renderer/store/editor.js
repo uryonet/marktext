@@ -487,15 +487,13 @@ const actions = {
         addBlankTab,
         markdownList,
         lineEnding,
-        tabBarVisibility,
         sourceCodeModeEnabled
       } = config
 
       commit('SET_GLOBAL_LINE_ENDING', lineEnding)
       dispatch('SEND_INITIALIZED')
       commit('SET_LAYOUT', {
-        rightColumn: 'files',
-        showTabBar: !!tabBarVisibility
+        rightColumn: 'files'
       })
       dispatch('SET_LAYOUT_MENU_ITEM')
 
@@ -644,17 +642,11 @@ const actions = {
     }
 
     // Replace/close selected untitled empty tab
-    let keepTabBarState = false
     if (currentFile) {
       const { isSaved, pathname } = currentFile
       if (isSaved && !pathname) {
-        keepTabBarState = true
         dispatch('FORCE_CLOSE_TAB', currentFile)
       }
-    }
-
-    if (!keepTabBarState) {
-      dispatch('SHOW_TAB_VIEW', false)
     }
 
     const { markdown, isMixedLineEndings } = markdownDocument
@@ -678,14 +670,6 @@ const actions = {
         time: 20000,
         showConfirm: false
       })
-    }
-  },
-
-  SHOW_TAB_VIEW ({ commit, state, dispatch }, always) {
-    const { tabs } = state
-    if (always || tabs.length === 1) {
-      commit('SET_LAYOUT', { showTabBar: true })
-      dispatch('SET_LAYOUT_MENU_ITEM')
     }
   },
 

@@ -47,7 +47,6 @@
 
 | Key                           | Type    | Default | Description                                        |
 | ----------------------------- | ------- | ------- | -------------------------------------------------- |
-| tabBarVisibility<sup>*</sup>  | Boolean | false   | Controls the visibility of the tabs.               |
 | sourceCodeModeEnabled*        | Boolean | false   | Controls the visibility of the source-code editor. |
 
 \*: These options are default/fallback values that are used if not session is loaded and are overwritten by the menu entries.

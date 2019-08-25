@@ -1,12 +1,11 @@
 <template>
   <div>
     <div
-      class="title-bar-editor-bg"
-      :class="{ 'tabs-visible': showTabBar }"
+      class="title-bar-editor-bg tabs-visible"
     ></div>
     <div
-      class="title-bar"
-      :class="[{ 'active': active }, { 'tabs-visible': showTabBar }, { 'frameless': titleBarStyle === 'custom' }, { 'isOsx': isOsx }]"
+      class="title-bar tabs-visible"
+      :class="[{ 'active': active }, { 'frameless': titleBarStyle === 'custom' }, { 'isOsx': isOsx }]"
     >
       <div class="title">
         <span v-if="!filename">Mark Text</span>
@@ -152,8 +151,7 @@ export default {
   },
   computed: {
     ...mapState({
-      titleBarStyle: state => state.preferences.titleBarStyle,
-      showTabBar: state => state.layout.showTabBar
+      titleBarStyle: state => state.preferences.titleBarStyle
     }),
     paths () {
       if (!this.pathname) return []

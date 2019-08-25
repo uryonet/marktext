@@ -39,7 +39,6 @@ const state = {
   theme: 'light',
 
   // Default values that are overwritten with the entries below.
-  tabBarVisibility: false,
   sourceCodeModeEnabled: false,
 
   searchExclusions: [],

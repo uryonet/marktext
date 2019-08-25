@@ -45,22 +45,6 @@ export default function (keybindings) {
       }
     }, {
       type: 'separator'
-    }, {
-      label: 'Toggle Tab Bar',
-      id: 'tabBarMenuItem',
-      accelerator: keybindings.getAccelerator('viewToggleTabBar'),
-      type: 'checkbox',
-      checked: false,
-      click (item, browserWindow, event) {
-        // if we call this function, the checked state is not set
-        if (!event) {
-          item.checked = !item.checked
-        }
-
-        actions.layout(item, browserWindow, 'showTabBar')
-      }
-    }, {
-      type: 'separator'
     }]
   }
 

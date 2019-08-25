@@ -2,7 +2,7 @@
     <div
       class="editor-with-tabs"
     >
-      <tabs v-show="showTabBar"></tabs>
+      <tabs></tabs>
       <div class="container">
         <editor
           :fileanme="filename"
@@ -42,10 +42,6 @@ export default {
       required: true
     },
     sourceCode: {
-      type: Boolean,
-      required: true
-    },
-    showTabBar: {
       type: Boolean,
       required: true
     },

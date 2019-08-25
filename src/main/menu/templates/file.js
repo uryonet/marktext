@@ -1,7 +1,6 @@
 import { app } from 'electron'
 import * as actions from '../actions/file'
 import { userSetting } from '../actions/marktext'
-import { showTabBar } from '../actions/view'
 import { isOsx } from '../../config'
 
 export default function (keybindings, userPreference, recentlyUsedFiles) {
@@ -13,7 +12,6 @@ export default function (keybindings, userPreference, recentlyUsedFiles) {
       accelerator: keybindings.getAccelerator('fileNewFile'),
       click (menuItem, browserWindow) {
         actions.newBlankTab(browserWindow)
-        showTabBar(browserWindow)
       }
     }, {
       label: 'New Window',

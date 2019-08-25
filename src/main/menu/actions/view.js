@@ -21,13 +21,6 @@ export const layout = (item, win, type) => {
   win.webContents.send('AGANI::listen-for-view-layout', { [type]: item.checked })
 }
 
-export const showTabBar = win => {
-  const tabBarMenuItem = getMenuItemById('tabBarMenuItem')
-  if (tabBarMenuItem && !tabBarMenuItem.checked && tabBarMenuItem.click) {
-    tabBarMenuItem.click(tabBarMenuItem, win)
-  }
-}
-
 ipcMain.on('AGANI::ask-for-mode', e => {
   const sourceCodeModeMenuItem = getMenuItemById(sourceCodeModeMenuItemId)
   const typewriterModeMenuItem = getMenuItemById(typewriterModeMenuItemId)
@@ -39,9 +32,4 @@ ipcMain.on('AGANI::ask-for-mode', e => {
   }
   const win = BrowserWindow.fromWebContents(e.sender)
   win.webContents.send('AGANI::res-for-mode', modes)
-})
-
-ipcMain.on('AGANI::set-view-layout', (e, { showTabBar }) => {
-  const tabBarMenuItem = getMenuItemById('tabBarMenuItem')
-  tabBarMenuItem.checked = showTabBar
 })

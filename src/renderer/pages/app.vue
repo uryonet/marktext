@@ -23,7 +23,7 @@
         :filename="filename"
         :cursor="cursor"
         :source-code="sourceCode"
-        :show-tab-bar="showTabBar"
+        :show-tab-bar="true"
         :text-direction="textDirection"
         :platform="platform"
       ></editor-with-tabs>
@@ -70,7 +70,6 @@ export default {
   },
   computed: {
     ...mapState({
-      showTabBar: state => state.layout.showTabBar,
       sourceCode: state => state.preferences.sourceCode,
       theme: state => state.preferences.theme,
       textDirection: state => state.preferences.textDirection
