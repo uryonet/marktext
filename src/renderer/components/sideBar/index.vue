@@ -32,7 +32,6 @@
     <div class="right-column" v-show="rightColumn">
       <tree
         :project-tree="projectTree"
-        :opened-files="openedFiles"
         :tabs="tabs"
         v-if="rightColumn === 'files'"
       ></tree>
@@ -48,7 +47,6 @@
 </template>
 
 <script>
-import { sideBarIcons, sideBarBottomIcons } from './help'
 import Tree from './tree.vue'
 import SideBarSearch from './search.vue'
 import Toc from './toc.vue'
@@ -56,10 +54,7 @@ import { mapState } from 'vuex'
 
 export default {
   data () {
-    this.sideBarIcons = sideBarIcons
-    this.sideBarBottomIcons = sideBarBottomIcons
     return {
-      openedFiles: [],
       sideBarViewWidth: 280
     }
   },

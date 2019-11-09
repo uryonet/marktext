@@ -4,35 +4,6 @@
       <!-- Placeholder -->
     </div>
 
-    <!-- Opened tabs -->
-    <div class="opened-files">
-      <div class="title">
-        <svg class="icon icon-arrow" :class="{'fold': !showOpenedFiles}" aria-hidden="true" @click.stop="toggleOpenedFiles()">
-          <use xlink:href="#icon-arrow"></use>
-        </svg>
-        <span class="default-cursor text-overflow" @click.stop="toggleOpenedFiles()">Opened files</span>
-        <a href="javascript:;" @click.stop="saveAll(false)" title="Save All">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-save-all"></use>
-          </svg>
-        </a>
-        <a href="javascript:;" @click.stop="saveAll(true)" title="Close All">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-close-all"></use>
-          </svg>
-        </a>
-      </div>
-      <div class="opened-files-list" v-show="showOpenedFiles">
-        <transition-group name="list">
-          <opened-file
-            v-for="tab of tabs"
-            :key="tab.id"
-            :file="tab"
-          ></opened-file>
-        </transition-group>
-      </div>
-    </div>
-
     <!-- Project tree view -->
     <div
       class="project-tree" v-if="projectTree"
@@ -63,7 +34,7 @@
         ></file>
         <div class="empty-project" v-if="projectTree.files.length === 0 && projectTree.folders.length === 0">
           <span>Empty project</span>
-          <a href="javascript:;" @click.stop="createFile">Create File</a>
+          <a href="javascript:" @click.stop="createFile">Create File</a>
         </div>
       </div>
     </div>
@@ -83,7 +54,6 @@
 <script>
 import Folder from './treeFolder.vue'
 import File from './treeFile.vue'
-import OpenedFile from './treeOpenedTab.vue'
 import { mapState } from 'vuex'
 import bus from '../../bus'
 import { createFileOrDirectoryMixins } from '../../mixins'
@@ -97,7 +67,6 @@ export default {
     return {
       showDirectories: true,
       showNewInput: false,
-      showOpenedFiles: true,
       createName: ''
     }
   },
@@ -108,13 +77,11 @@ export default {
       },
       required: true
     },
-    openedFiles: Array,
     tabs: Array
   },
   components: {
     Folder,
-    File,
-    OpenedFile
+    File
   },
   computed: {
     ...mapState({
@@ -152,15 +119,9 @@ export default {
     openFolder () {
       this.$store.dispatch('ASK_FOR_OPEN_PROJECT')
     },
-    saveAll (isClose) {
-      this.$store.dispatch('ASK_FOR_SAVE_ALL', isClose)
-    },
     createFile () {
       this.$store.dispatch('CHANGE_ACTIVE_ITEM', this.projectTree)
       bus.$emit('SIDEBAR::new', 'file')
-    },
-    toggleOpenedFiles () {
-      this.showOpenedFiles = !this.showOpenedFiles
     },
     toggleDirectories () {
       this.showDirectories = !this.showDirectories
